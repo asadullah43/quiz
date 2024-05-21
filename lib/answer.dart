@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
   final Function answerQuestion;
-  const Answer(this.answerQuestion, {super.key});
+  final String answerText;
+  const Answer(
+      {required this.answerQuestion,
+      answer,
+      super.key,
+      required this.answerText});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,7 @@ class Answer extends StatelessWidget {
               fontSize: 20.0, fontWeight: FontWeight.bold), // Set text style
           // Adjust elevation
         ),
-        child: const Text('Answer 1'),
+        child: Text(answerText),
       ),
     );
   }
